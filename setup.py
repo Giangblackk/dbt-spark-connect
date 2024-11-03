@@ -17,8 +17,9 @@ setup(
     packages=find_namespace_packages(include=["dbt", "dbt.*"]),
     include_package_data=True,
     install_requires=[
-        "dbt-core~=0.0.1.",
-        "dbt-common<1.0"
-        "dbt-adapter~=0.1.0a2"
+        "dbt-common>=1.10,<2.0",
+        "dbt-adapters>=1.7,<2.0",
+        # add dbt-core to ensure backwards compatibility of installation, this is not a functional dependency
+        "dbt-core>=1.8.0",
     ],
 )
